@@ -1,4 +1,8 @@
 #!/bin/bash
+# Only run on the first Friday of the month (days 1–7)
+if [ "$(date +%-d)" -gt 7 ]; then
+    exit 0
+fi
 cd /Users/revekkagershovich/Projects/Orgs/orgs
 /opt/anaconda3/envs/Revekka_first_environment/bin/jupyter nbconvert \
     --to notebook --execute monthly_review.ipynb \
