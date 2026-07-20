@@ -233,3 +233,207 @@ During handling of the above exception, another exception occurred:
 
 [31mConnectionError[39m: HTTPSConnectionPool(host='api.todoist.com', port=443): Max retries exceeded with url: /api/v1/projects?limit=50 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1047d0910>: Failed to resolve 'api.todoist.com' ([Errno 8] nodename nor servname provided, or not known)"))
 
+[NbConvertApp] Converting notebook weekly_review.ipynb to notebook
+[NbConvertApp] Writing 28229 bytes to /tmp/weekly_review_last_run.ipynb
+[NbConvertApp] Converting notebook weekly_review.ipynb to notebook
+[NbConvertApp] Writing 27829 bytes to /tmp/weekly_review_last_run.ipynb
+[NbConvertApp] Converting notebook weekly_review.ipynb to notebook
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Revekka_first_environment/bin/jupyter-nbconvert", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/jupyter_core/application.py", line 284, in launch_instance
+    super().launch_instance(argv=argv, **kwargs)
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/traitlets/config/application.py", line 1075, in launch_instance
+    app.start()
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/nbconvertapp.py", line 420, in start
+    self.convert_notebooks()
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/nbconvertapp.py", line 597, in convert_notebooks
+    self.convert_single_notebook(notebook_filename)
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/nbconvertapp.py", line 563, in convert_single_notebook
+    output, resources = self.export_single_notebook(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/nbconvertapp.py", line 487, in export_single_notebook
+    output, resources = self.exporter.from_filename(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 201, in from_filename
+    return self.from_file(f, resources=resources, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 220, in from_file
+    return self.from_notebook_node(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/exporters/notebook.py", line 36, in from_notebook_node
+    nb_copy, resources = super().from_notebook_node(nb, resources, **kw)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 154, in from_notebook_node
+    nb_copy, resources = self._preprocess(nb_copy, resources)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 353, in _preprocess
+    nbc, resc = preprocessor(nbc, resc)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/preprocessors/base.py", line 48, in __call__
+    return self.preprocess(nb, resources)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/preprocessors/execute.py", line 103, in preprocess
+    self.preprocess_cell(cell, resources, index)
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/preprocessors/execute.py", line 124, in preprocess_cell
+    cell = self.execute_cell(cell, index, store_history=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Projects to add
+projects_to_add = [
+    {"name": "Weekly review"}
+]
+
+# Fetch existing projects
+existing_projects = get_projects()
+
+print(len(existing_projects))
+print([p["name"] for p in existing_projects])
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mHTTPError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[5][39m[32m, line 7[39m
+[32m      2[39m projects_to_add = [
+[32m      3[39m     {[33m"[39m[33mname[39m[33m"[39m: [33m"[39m[33mWeekly review[39m[33m"[39m}
+[32m      4[39m ]
+[32m      6[39m [38;5;66;03m# Fetch existing projects[39;00m
+[32m----> [39m[32m7[39m existing_projects = [43mget_projects[49m[43m([49m[43m)[49m
+[32m      9[39m [38;5;28mprint[39m([38;5;28mlen[39m(existing_projects))
+[32m     10[39m [38;5;28mprint[39m([p[[33m"[39m[33mname[39m[33m"[39m] [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m existing_projects])
+
+[36mCell[39m[36m [39m[32mIn[4][39m[32m, line 15[39m, in [36mget_projects[39m[34m()[39m
+[32m     12[39m     params[[33m"[39m[33mcursor[39m[33m"[39m] = cursor
+[32m     14[39m response = requests.get(url, headers=HEADERS, params=params)
+[32m---> [39m[32m15[39m [43mresponse[49m[43m.[49m[43mraise_for_status[49m[43m([49m[43m)[49m
+[32m     16[39m data = response.json()
+[32m     18[39m all_projects.extend(data[[33m"[39m[33mresults[39m[33m"[39m])
+
+[36mFile [39m[32m/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/requests/models.py:1024[39m, in [36mResponse.raise_for_status[39m[34m(self)[39m
+[32m   1019[39m     http_error_msg = (
+[32m   1020[39m         [33mf[39m[33m"[39m[38;5;132;01m{[39;00m[38;5;28mself[39m.status_code[38;5;132;01m}[39;00m[33m Server Error: [39m[38;5;132;01m{[39;00mreason[38;5;132;01m}[39;00m[33m for url: [39m[38;5;132;01m{[39;00m[38;5;28mself[39m.url[38;5;132;01m}[39;00m[33m"[39m
+[32m   1021[39m     )
+[32m   1023[39m [38;5;28;01mif[39;00m http_error_msg:
+[32m-> [39m[32m1024[39m     [38;5;28;01mraise[39;00m HTTPError(http_error_msg, response=[38;5;28mself[39m)
+
+[31mHTTPError[39m: 503 Server Error: Service Unavailable for url: https://api.todoist.com/api/v1/projects?limit=50
+
+[NbConvertApp] Converting notebook weekly_review.ipynb to notebook
+[NbConvertApp] Writing 28340 bytes to /tmp/weekly_review_last_run.ipynb
+[NbConvertApp] Converting notebook weekly_review.ipynb to notebook
+[NbConvertApp] Writing 28610 bytes to /tmp/weekly_review_last_run.ipynb
+[NbConvertApp] Converting notebook weekly_review.ipynb to notebook
+[NbConvertApp] Writing 28022 bytes to /tmp/weekly_review_last_run.ipynb
+[NbConvertApp] Converting notebook weekly_review.ipynb to notebook
+[NbConvertApp] Writing 27817 bytes to /tmp/weekly_review_last_run.ipynb
+[NbConvertApp] Converting notebook weekly_review.ipynb to notebook
+[NbConvertApp] Writing 27657 bytes to /tmp/weekly_review_last_run.ipynb
+[NbConvertApp] Converting notebook weekly_review.ipynb to notebook
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/Revekka_first_environment/bin/jupyter-nbconvert", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/jupyter_core/application.py", line 284, in launch_instance
+    super().launch_instance(argv=argv, **kwargs)
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/traitlets/config/application.py", line 1075, in launch_instance
+    app.start()
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/nbconvertapp.py", line 420, in start
+    self.convert_notebooks()
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/nbconvertapp.py", line 597, in convert_notebooks
+    self.convert_single_notebook(notebook_filename)
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/nbconvertapp.py", line 563, in convert_single_notebook
+    output, resources = self.export_single_notebook(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/nbconvertapp.py", line 487, in export_single_notebook
+    output, resources = self.exporter.from_filename(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 201, in from_filename
+    return self.from_file(f, resources=resources, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 220, in from_file
+    return self.from_notebook_node(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/exporters/notebook.py", line 36, in from_notebook_node
+    nb_copy, resources = super().from_notebook_node(nb, resources, **kw)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 154, in from_notebook_node
+    nb_copy, resources = self._preprocess(nb_copy, resources)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 353, in _preprocess
+    nbc, resc = preprocessor(nbc, resc)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/preprocessors/base.py", line 48, in __call__
+    return self.preprocess(nb, resources)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/preprocessors/execute.py", line 103, in preprocess
+    self.preprocess_cell(cell, resources, index)
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbconvert/preprocessors/execute.py", line 124, in preprocess_cell
+    cell = self.execute_cell(cell, index, store_history=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Projects to add
+projects_to_add = [
+    {"name": "Weekly review"}
+]
+
+# Fetch existing projects
+existing_projects = get_projects()
+
+print(len(existing_projects))
+print([p["name"] for p in existing_projects])
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mHTTPError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[5][39m[32m, line 7[39m
+[32m      2[39m projects_to_add = [
+[32m      3[39m     {[33m"[39m[33mname[39m[33m"[39m: [33m"[39m[33mWeekly review[39m[33m"[39m}
+[32m      4[39m ]
+[32m      6[39m [38;5;66;03m# Fetch existing projects[39;00m
+[32m----> [39m[32m7[39m existing_projects = [43mget_projects[49m[43m([49m[43m)[49m
+[32m      9[39m [38;5;28mprint[39m([38;5;28mlen[39m(existing_projects))
+[32m     10[39m [38;5;28mprint[39m([p[[33m"[39m[33mname[39m[33m"[39m] [38;5;28;01mfor[39;00m p [38;5;129;01min[39;00m existing_projects])
+
+[36mCell[39m[36m [39m[32mIn[4][39m[32m, line 15[39m, in [36mget_projects[39m[34m()[39m
+[32m     12[39m     params[[33m"[39m[33mcursor[39m[33m"[39m] = cursor
+[32m     14[39m response = requests.get(url, headers=HEADERS, params=params)
+[32m---> [39m[32m15[39m [43mresponse[49m[43m.[49m[43mraise_for_status[49m[43m([49m[43m)[49m
+[32m     16[39m data = response.json()
+[32m     18[39m all_projects.extend(data[[33m"[39m[33mresults[39m[33m"[39m])
+
+[36mFile [39m[32m/opt/anaconda3/envs/Revekka_first_environment/lib/python3.11/site-packages/requests/models.py:1024[39m, in [36mResponse.raise_for_status[39m[34m(self)[39m
+[32m   1019[39m     http_error_msg = (
+[32m   1020[39m         [33mf[39m[33m"[39m[38;5;132;01m{[39;00m[38;5;28mself[39m.status_code[38;5;132;01m}[39;00m[33m Server Error: [39m[38;5;132;01m{[39;00mreason[38;5;132;01m}[39;00m[33m for url: [39m[38;5;132;01m{[39;00m[38;5;28mself[39m.url[38;5;132;01m}[39;00m[33m"[39m
+[32m   1021[39m     )
+[32m   1023[39m [38;5;28;01mif[39;00m http_error_msg:
+[32m-> [39m[32m1024[39m     [38;5;28;01mraise[39;00m HTTPError(http_error_msg, response=[38;5;28mself[39m)
+
+[31mHTTPError[39m: 503 Server Error: Service Unavailable for url: https://api.todoist.com/api/v1/projects?limit=50
+
+[NbConvertApp] Converting notebook weekly_review.ipynb to notebook
+[NbConvertApp] Writing 28029 bytes to /tmp/weekly_review_last_run.ipynb
